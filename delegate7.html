@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Delegate</title>
+</head>
+<body>
+  <h1>Explore delegate</h1>
+  <!-- ol#item-list>li.item*6{my aawsome item - $} -->
+  <ol id="item-list">
+    <li class="item">my aawsome item - 1</li>
+    <li class="item">my aawsome item - 2</li>
+    <li class="item">my aawsome item - 3</li>
+    <li class="item">my aawsome item - 4</li>
+    <li class="item">my aawsome item - 5</li>
+    <li class="item">my aawsome item - 6</li>
+  </ol>
+  <button id="btn-item">add new item</button>
+  <script>
+    // const items = document.getElementsByClassName('item');
+    // // console.log(items)
+    // for(const  item of items){
+    //   // 
+    //   item.addEventListener('click',function(event){
+    //   //  console.log(event.target.parentNode);
+    //   event.target.parentNode.removeChild(event.target)
+    //      .addEventListener('click',function(){
+    //      })
+    //   })
+    // }
+
+
+    // pore likchi laste sobar. parent er modde event  handler  add korbo
+    document.getElementById('item-list')
+       .addEventListener('click',function(event){
+        // console.log(event.target);
+        event.target.parentNode.removeChild(event.target)
+       })
+
+    // add a new item 
+    document.getElementById('btn-item')
+       .addEventListener('click',function(){
+        // console.log('click')
+        // parent to be added to
+        const ol = document.getElementById('item-list');
+
+        // new item 
+        const li = document.createElement('li');
+        li.classList.add('item');
+        li.innerText = 'brand new  item added';
+
+        // add the item 
+        ol.appendChild(li);
+       })
+  </script>
+</body>
+</html>

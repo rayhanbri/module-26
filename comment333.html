@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>comment box</title>
+  <style>
+    .comment{
+      border: 2px solid blue;
+      background-color: lightcoral;
+      margin: 10px; 
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>My Commnet Box</h1>
+  <section>
+    <h3>All Comments Here</h3>
+    <div id="comment-continer">
+      <p class="comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores minima placeat repellendus, exercitationem sunt quisquam eum libero consequatur voluptates mollitia.</p>
+      <p class="comment">Quaerat dolore, alias laudantium vero possimus fuga odio soluta repudiandae placeat assumenda ab reprehenderit veniam temporibus optio quos dicta aspernatur.</p>
+      <p class="comment">Eius voluptatibus deleniti animi sint, nisi at veniam officia hic accusantium iste alias ducimus suscipit. Illo laudantium quam dolorem nisi.</p>
+    </div>
+    <textarea name="" id="text-box" cols="100" rows="5"></textarea>
+    <br>
+    <button id="comment-post">post</button>
+  </section>
+  <script>
+    document.getElementById('comment-post').addEventListener('click',function(){
+      // console.log('cick yaaaa')
+      const commentBox = document.getElementById('text-box');
+      const newCommentBox = commentBox.value;
+      // text area input field e inner  text tahkhe na ,, value thakhe  
+      // console.log(newCommentBox);
+      const commentContiner = document.getElementById('comment-continer');
+      // console.log(commentContiner)
+      const commentElement = document.createElement('p');
+      // last e lickchi 
+      commentElement.classList.add('comment');
+      commentElement.innerText = newCommentBox;
+
+      commentContiner.appendChild(commentElement);
+
+
+      commentBox.value='';
+    })
+  </script>  
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Handler</title>
+</head>
+<body>
+  <!-- number 1  -->
+  <h1 id="page-title">Event  Handler</h1>
+  <button id="btn-update-text">update title</button>
+   <!-- number 1 end   -->
+   <!-- number 2  -->
+    <p id="login-title">no user</p>
+    <button id="btn-login">Log In </button>
+    <!-- number 2 end -->
+     <!-- number 3 start  -->
+      <br> 
+      <br>
+      <br>
+      <p id="input-p">no name </p>
+      <input id="input" placeholder="your name" type="text" name="" id="">
+      <button id="btn-update">updated</button>
+  <script>
+    // number 1
+    document.getElementById('btn-update-text').addEventListener ('click',function(){
+      // console.log('clicked button')
+     const pageTitleElement = document.getElementById('page-title')
+    //  console.log(pageTitleElement)
+     pageTitleElement.innerText = 'updated with javascript'
+    })
+    // number 1 end 
+    // Number 2 start 
+    document.getElementById('btn-login').addEventListener('click',function(){
+      const loginTitle = document.getElementById('login-title')
+      loginTitle.innerText = "user log in successfully"
+    })
+    // number 2 end 
+
+    // number 3 start 
+    document.getElementById('btn-update').addEventListener ('click' ,function(){
+      // console.log('button clicked');
+      const inputName = document.getElementById('input')
+      const name = inputName.value
+      let  inputP = document.getElementById('input-p')
+      inputP.innerText = name;
+      console.log(inputP)
+
+    })
+    
+  </script>
+  <script src="js/eventHandler.js"></script>
+</body>
+</html>
